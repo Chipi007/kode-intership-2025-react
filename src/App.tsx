@@ -1,9 +1,4 @@
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import UserDetails from "./pages/UserDetails/UserDetails";
 import UsersListPage from "./pages/UsersListPage/UsersListPage";
@@ -14,7 +9,7 @@ function App() {
         <>
             <GlobalStyles />
             <UsersContextProvider>
-                <Router>
+                <BrowserRouter basename="/kode-intership-2025-react">
                     <Routes>
                         <Route
                             path="/"
@@ -23,7 +18,7 @@ function App() {
                         <Route path="/users" element={<UsersListPage />} />
                         <Route path="/users/:id" element={<UserDetails />} />
                     </Routes>
-                </Router>
+                </BrowserRouter>
             </UsersContextProvider>
         </>
     );
